@@ -2,10 +2,16 @@
 {
     public class GetBookDto
     {
-        public int Id { get; set; }
+        public string ISBN { get; set; }
 
+        /// <summary>
+        /// Book title and author seperated by space
+        /// </summary>
         public string PavadinimasIrAutorius { get; set; }
 
+        /// <summary>
+        /// Release year of the book
+        /// </summary>
         public int LeidybosMetai { get; set; }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using BookAplikation.Data;
 using BookAplikation.Models.DTO;
+using BookAplikation.Repository.IRepository;
 
 namespace BookAplikation.Services
 {
-    public class BookManager : IBookManager
+    public class BookManager : IBookManager 
     {
         private readonly IBookWrapper _wrapper;
         private readonly IBookSet _context;

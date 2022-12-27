@@ -6,13 +6,13 @@ namespace BookAplikation.Services
 {
     public class BookWrapper : IBookWrapper
     {
-       public GetBookDto Bind(Book book)
+        public GetBookDto Bind(Book book)
         {
             return new GetBookDto
             {
-                Id = book.Id,
-                PavadinimasIrAutorius = $"{book.Author} {book.Title}",
-                LeidybosMetai = book.PublishYear
+                ISBN = book.ISBN,
+                LeidybosMetai = book.PublishYear,
+                PavadinimasIrAutorius = book.Title + " " + book.Author
             };
         }
 
@@ -20,10 +20,13 @@ namespace BookAplikation.Services
         {
             return new Book
             {
+                ISBN = book.ISBN,
                 Title = book.Pavadinimas,
                 Author = book.Autorius,
                 PublishYear = book.Isleista.Year,
-                CoverType = (ECoverType)Enum.Parse(typeof(ECoverType), book.KnygosTypas),
+                ECoverType = (ECoverType)Enum.Parse(typeof(ECoverType), book.KnygosTipas),
+                Created = DateTime.Now,
+                Updated = DateTime.Now
             };
         }
 
@@ -31,12 +34,11 @@ namespace BookAplikation.Services
         {
             return new Book
             {
-                Id = book.Id,
+                ISBN = book.ISBN,
                 Title = book.Pavadinimas,
                 Author = book.Autorius,
                 PublishYear = book.Isleista.Year,
-                CoverType = (ECoverType)Enum.Parse(typeof(ECoverType), book.KnygosTipas),
-
+                ECoverType = (ECoverType)Enum.Parse(typeof(ECoverType), book.KnygosTipas)
             };
         }
     }

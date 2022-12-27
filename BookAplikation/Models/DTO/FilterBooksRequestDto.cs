@@ -2,12 +2,21 @@
 {
     public class FilterBooksRequestDto
     {
-       
-            public string Pavadinimas { get; set; }
 
-            public string Autorius { get; set; }
+        /// <summary>
+        /// Book title
+        /// </summary>
+        public string Pavadinimas { get; set; } = "";
 
-            public string KnigosTipas { get; set; }
-        
+        /// <summary>
+        /// Author of the book
+        /// </summary>
+        public string Autorius { get; set; } = "";
+
+        /// <summary>
+        /// Cover type of the book
+        /// </summary>
+        public string KnygosTipas { get; set; } = "";
+
     }
 }
